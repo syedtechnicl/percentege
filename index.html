@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>percentege</title>
+</head>
+<body>
+<div style="font-weight:bold; text-transform:capitalize;" class="container p-5">
+<br><h2 style="text-align:center; text-decoration:underline; text-decoration-color:red" class="text-success font-weight-bold"><b>percentege calculator</b></h2>
+<br>
+computer:<input type="text" name="" id="com" placeholder="please enter your marks" class="container-fluid">
+<br><br>
+english:<input type="text" name="" id="eng"   placeholder="please enter your marks"  class="container-fluid">
+<br><br>
+maths:<input type="text" name="" id="mat"  placeholder="please enter your marks"  class="container">
+<br><br>
+physic:<input type="text" name="" id="phy"   placeholder="please enter your marks" class="container">
+<br><br>
+chemistry:<input type="text" name="" id="chemis"  placeholder="please enter your marks"  class="container">
+<br><br>
+<button onclick="result();" class="btn btn-primary">check</button>
+<br>
+<br>
+<h1 style="text-decoration:underline;text-align:center;" class="text-success">chek your result</h1>
+<br>
+<table style="text-transform:capitalize;" border="1"
+class="table" >
+<tr>
+<th>total marks:</th>	
+<th class="bg bg-warning text-white">500</th>
+</tr>
+<tr>
+<th>obtain marks :</th>	
+<th id="obtain" class="bg bg-warning text-white"></th>
+</tr>	
+<tr>
+<th>percentage :</th>	
+<th id="per" class="bg bg-warning text-white"></th>
+</tr>
+<tr>
+<th>grade :</th>	
+<th id="grade" class="bg bg-warning text-white"></th>
+</tr>
+<tr>
+<th>remarks:</th>	
+<th style="color:red;" id="remarks" class="bg bg-danger text-white" style="color:red"></th>
+</tr></table>
+</div>
+<script>
+function result(){
+var a=parseInt(document.querySelector("#com").value);
+var b=parseInt(document.querySelector("#eng").value);
+var c=parseInt(document.querySelector("#mat").value);
+var d=parseInt(document.querySelector("#phy").value);
+var e=parseInt(document.querySelector("#chemis").value);
+if (a>100 || b>100 || c>100 || d>100 || e>100) {
+alert("please enter correct value");	
+}else{
+var obtain=a+b+c+d+e;
+document.querySelector("#obtain").innerHTML=obtain;	
+var per=obtain/500*100;
+document.querySelector("#per").innerHTML=per;
+// grade start 
+if (obtain>=80) {
+document.querySelector("#grade").innerHTML="A"
+}else if (obtain>=70) {
+document.querySelector("#grade").innerHTML="B"	
+}
+else if (obtain>=60) {
+document.querySelector("#grade").innerHTML="C"	
+}
+else if (obtain>=50) {
+document.querySelector("#grade").innerHTML="D"	
+}
+else if (obtain>=40) {
+document.querySelector("#grade").innerHTML="E"	
+}
+else{
+document.querySelector("#grade").innerHTML="F"
+}
+// grade end
+
+// remarks start
+if (a>40 && b>40 && c>40 && d>40 && e>40) {
+document.querySelector("#remarks").innerHTML="Pass"
+}else{
+document.querySelector("#remarks").innerHTML='Fail'
+
+}
+
+
+// remarks end
+
+}
+
+
+
+
+
+
+
+}
+
+
+	
+</script>
+
+
+
+
+
+
+
+
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	
+</body>
+</html>
